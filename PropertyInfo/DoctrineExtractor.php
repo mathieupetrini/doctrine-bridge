@@ -88,7 +88,7 @@ class DoctrineExtractor implements PropertyListExtractorInterface, PropertyTypeE
             if ($metadata instanceof ClassMetadataInfo) {
                 $associationMapping = $metadata->getAssociationMapping($property);
 
-                if (isset($associationMapping['indexBy'])) {
+                if (isset($associationMapping['indexBy']) && false) {
                     $indexProperty = $associationMapping['indexBy'];
                     /** @var ClassMetadataInfo $subMetadata */
                     $subMetadata = $this->entityManager ? $this->entityManager->getClassMetadata($associationMapping['targetEntity']) : $this->classMetadataFactory->getMetadataFor($associationMapping['targetEntity']);
